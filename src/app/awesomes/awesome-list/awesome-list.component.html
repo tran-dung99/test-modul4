@@ -1,0 +1,28 @@
+<h3 style="padding-left: 630px; padding-top: 20px; font-weight: bolder; font-size: 40px">Awesome</h3>
+<hr>
+<div class="container">
+  <button routerLink="/create" class="btn btn-success mb-2">Create</button>
+  <table class="table">
+    <thead>
+    <tr style="background-color: #3f51b5; color: white">
+      <th scope="col">STT</th>
+      <th scope="col">Tag</th>
+      <th scope="col">Url</th>
+      <th scope="col">Description</th>
+      <th scope="col" colspan="2" style="text-align: center">Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let awesome of awesomes; index as i">
+      <th scope="row">{{awesome.id}}</th>
+      <td>{{awesome.tag}}</td>
+      <td><a [href]="awesome.url">{{awesome.url}}</a></td>
+      <td>{{awesome.descriptions}}</td>
+      <td><button style="width: 40px" routerLink="update/{{awesome.id}}" class="btn btn-warning"><i class="fas fa-pen"></i></button></td>
+      <td><button class="btn btn-danger" (click)="delete(i)"><i class="fas fa-trash-alt"></i></button></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

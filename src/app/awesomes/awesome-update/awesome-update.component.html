@@ -1,0 +1,35 @@
+
+<div class="container">
+  <h1>Awesome Update</h1>
+  <form *ngIf="updateForm" [formGroup]="updateForm" (ngSubmit)="update(id)">
+    <table>
+      <tr>
+        <td>Tag:</td>
+        <td><input style="width: 500px" type="text" class="form-control" formControlName="tag"></td>
+      </tr>
+      <br>
+      <tr>
+        <td>Url:</td>
+        <td><input type="text"  class="form-control" formControlName="url"></td>
+      </tr>
+      <br>
+      <tr>
+        <!--      <td>Description:</td>-->
+        <!--      <td><input type="text" class="form-control" formControlName="descriptions"></td>-->
+        <td>
+          Description:
+        </td>
+        <!--          <label for="exampleFormControlTextarea1">Description</label>-->
+        <td>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="descriptions"></textarea>
+        </td>
+
+      </tr>
+    </table>
+    <br>
+    <button style="margin-left: 77px; width: 120px" class="btn btn-success" type="submit">Update</button>
+    &ensp;
+    <button routerLink="" class="btn btn-light">Back</button>
+  </form>
+</div>
+
